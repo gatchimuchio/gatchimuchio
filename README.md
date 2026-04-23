@@ -1,39 +1,75 @@
-# gatchimuchio
+# gatchimuchio | AI Systems, Audit, and Decision Engineering
 
-Building systems around **structure, audit, and operational clarity**.
+Developer focused on **structure, audit, and operational clarity**.  
+Working across **AI / LLM evaluation**, **decision systems**, **automation**, and **black-box handling**.  
+The goal is not only to make systems work, but to make them **bounded, inspectable, and deployable**.
 
-I work across AI, automation, decision systems, and black-box handling.  
-My focus is not just making things work, but making them **bounded, inspectable, and deployable**.
+---
 
-## Core Areas
+## Core Ecosystem
+
+| Platform | Domain | Focus |
+|---|---|---|
+| [blue-tanuki-core](https://github.com/gatchimuchio/blue-tanuki-core) | AI / Control Core | Policy-driven execution, bounded routing, audit, and safe control |
+| [hds-public-shell](https://github.com/gatchimuchio/hds-public-shell) | Decision Interface | Public shell for HDS-style routing with suspend/assert boundaries |
+| GitHub Profile | Engineering Identity | Repositories, design direction, and public-facing implementation notes |
+
+---
+
+## Focus Areas
+
 - AI / LLM Evaluation
 - Audit-Oriented System Design
 - Decision Routing
 - Black-Box Handling
 - Practical Automation
+- Operational Safety
 
-## Featured
-### [blue-tanuki-core](https://github.com/gatchimuchio/blue-tanuki-core)
-Policy-driven execution core with explicit boundaries for routing, audit, and safe control.
-
-### [hds-public-shell](https://github.com/gatchimuchio/hds-public-shell)
-Public shell for HDS-style decision interfaces with suspend/assert semantics and operational guardrails.
+---
 
 ## Principles
-- Structure over noise
-- Reproducibility over impression
-- Explicit boundaries over ambiguity
-- Safety before expansion
-- Operational value over empty sophistication
 
-## Current Interests
-- LLM benchmarking
-- Evaluation architecture
-- Human decision-making systems
-- Responsible AI operations
-- Black-box transparency
+- **Structure over noise**
+- **Reproducibility over impression**
+- **Explicit boundaries over ambiguity**
+- **Safety before expansion**
+- **Operational value over empty sophistication**
 
-## Profile
-Engineering-minded.  
-Audit-aware.  
-Implementation-focused.
+---
+
+## Current Direction
+
+I am currently focused on:
+
+- building auditable AI-facing system components
+- improving evaluation and benchmark design
+- designing bounded execution and routing layers
+- treating black-box systems as operational targets, not objects of blind trust
+
+---
+
+## Profile Snapshot
+
+| Axis | Direction |
+|---|---|
+| Engineering Style | Implementation-focused |
+| System Preference | Bounded and inspectable |
+| Evaluation View | Audit before trust |
+| Design Priority | Real-world operability |
+| Risk Stance | Safety before speed |
+
+---
+
+## Featured Notes
+
+- I prefer systems that can be **tested, inspected, and recovered**
+- I treat ambiguity as something to **bound**, not decorate
+- I value implementation that survives contact with reality
+
+---
+
+## Links
+
+- GitHub: [gatchimuchio](https://github.com/gatchimuchio)
+- Core Repo: [blue-tanuki-core](https://github.com/gatchimuchio/blue-tanuki-core)
+- Public Shell: [hds-public-shell](https://github.com/gatchimuchio/hds-public-shell)
