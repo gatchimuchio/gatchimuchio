@@ -1,4 +1,4 @@
-# Teppei Oohira / 大平鉄兵
+# がっちむち♂ | gatchimuchio
 
 ### I build the architecture beneath AI — not just applications on top of it.
 
@@ -113,7 +113,7 @@ The public repositories intentionally do **not** disclose complete private HDS i
 
 **[Project ORCHID](https://github.com/DigitalServerHost/ORCHID)** is low-level execution and memory-architecture work that grew from my initial locality and multi-memory-role proof-of-concept research.
 
-- **Concept originator:** Teppei Oohira / 大平鉄兵 ([@gatchimuchio](https://github.com/gatchimuchio))
+- **Concept originator:** がっちむち♂ ([@gatchimuchio](https://github.com/gatchimuchio))
 - **Core architecture and maintainer:** Kevin West ([@westkevin12](https://github.com/westkevin12))
 
 The ORCHID repository preserves the division of responsibility and the [original baseline](https://github.com/DigitalServerHost/ORCHID/tree/gatchimuchio-original). The engineering connection with my AI work is the deliberate separation of **what a system must do** from **how its current hardware or software implementation happens to do it**.
