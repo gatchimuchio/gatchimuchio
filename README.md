@@ -20,7 +20,7 @@ I lead the architecture, specifications, development direction and acceptance cr
 |---|---|---|
 | **[🐚 D4 Pocket](https://github.com/gatchimuchio/D4-POCKET)** | **The operating foundation for AI agents.** A general-purpose control plane for runtimes, agents and tools, with explicit permission, approval, audit and recovery boundaries. | Windows feature-complete development milestone; bounded mobile/non-Windows acceptance; B4 integration remains open. **Not yet a production release.** |
 | **[🦝 BLUE-TANUKI](https://github.com/gatchimuchio/BLUE-TANUKI)** | **Give AI capabilities, not unchecked authority.** A resident agent system with standalone HDS-BRAIN governing decisions, execution boundaries and traceable results. | Public `1.0.0-rc.1` technical release candidate; newer end-to-end agent work in `QE_BUILD`. **GA and owner release approval remain pending.** |
-| **[⚙️ MINIDORA / ミニドラ](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA)** | **Rethink the model itself.** Research and implementation of language-model functions without a neural-network or Transformer core. | GPQA Diamond **40/198** in the September 27, 2026 canonical core run; separate modular-capability experiment; bounded Google ADK / Cloud Run chat demonstration. **The newer integrated core has not been re-benchmarked on all 198 questions.** |
+| **[⚙️ MINIDORA / ミニドラ](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA)** | **Rebuild LLMs from first principles, without a Transformer core.** A non-neural system that separates the language model, judgment, knowledge and extensible capabilities. | Historical same-run LIVE GPQA: **29/198 → 80/198 (+51, zero regressions)** without core retraining for this capability addition; independent core run **40/198**; bounded ADK/Cloud Run demo. Newer integrated code is not yet re-benchmarked. |
 
 These are **three different engineering responsibilities**, not three names for the same chatbot.
 
@@ -52,23 +52,25 @@ A public [technical RC](https://github.com/gatchimuchio/BLUE-TANUKI/releases) pr
 
 **The ambition:** move from “AI that can call things” to **AI whose decisions and actions can be governed and inspected**.
 
-### ⚙️ MINIDORA — an LLM need not be defined by its dominant architecture
+### ⚙️ MINIDORA — Rebuild an LLM without inheriting the Transformer architecture
 
-**[Repository →](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA) · [Recorded demonstration →](https://youtu.be/q7hF26QBabI)**
+**[Repository →](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA) · [Live demo video →](https://youtu.be/q7hF26QBabI) · [Measured capability experiment →](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA/blob/main/評価/GPQA_Diamond_MINIDORA80_Module_E2E_正本_2026-09-09.md)**
 
-MINIDORA takes a more fundamental route: **separate what makes a language-model system function from the neural-network architecture usually used to build one.** It explores non-neural language-model components, deterministic computation, external evidence and attachable capabilities.
+**What if the next route to capable AI is not a larger neural model, but a different engineering structure?** MINIDORA tackles that question by building a **non-neural language-model core**, separating decision governance through HDS, and attaching computation, knowledge retrieval and replaceable capabilities without turning them into one monolithic model.
 
-The repository deliberately distinguishes different measurement series:
+Its strongest bounded demonstration is not just that the model can run. **On the September 9, 2026 GPQA Diamond experiment, enabling scientific-capability modules raised the same-run LIVE result from 29/198 to 80/198—51 additional correct answers, zero regressions—without retraining or enlarging the retained model core for that addition.**
 
-| Measurement | Observed result | What it supports |
+| Evidence series | Recorded result | Interpretation |
 |---|---:|---|
-| Canonical core, September 27, 2026 | **40/198 GPQA Diamond** | Historical `LIVE_ONLY` evaluation of that core |
-| Historical MINIDORA80 same-run comparison | **29/198 OFF → 80/198 ON** | A bounded demonstration of capability-module contribution without retraining the core for that addition |
-| October 2026 Google ADK / Cloud Run | **Bounded live responses and trace checks** | A working demonstration for selected tasks, not comprehensive chatbot quality |
+| Historical MINIDORA80 same-run comparison | **29/198 OFF → 80/198 ON (+51)** | End-to-end capability added by modules in that bounded experiment |
+| Separate September 27, 2026 core measurement | **40/198 GPQA Diamond** | LIVE core-only evaluation, not interchangeable with MINIDORA80 |
+| October 2026 Google ADK / Cloud Run | **Real HTTP responses, source retrieval and trace checks** | Working bounded chatbot paths—not an all-purpose conversational-quality certificate |
 
-The **October 1 integrated implementation and later chat additions have not inherited the 40/198 score by measurement**. An authenticated Cloud Run demo exists; it is not a declaration of general parity with large frontier models.
+The historical MINIDORA80 40.40% result also sits in the same **roughly 40% numerical range** as the **39% GPT-4 baseline published in the original GPQA paper**. The tested subsets and evaluation conditions differ; it is **not a same-condition win or a claim of overall GPT-4 equivalence**.
 
-**The ambition:** test whether model capabilities can be engineered by structure and composition, rather than treating parameter growth as the only path.
+The October 1 integrated implementation and subsequent chat additions have **not yet been measured across all 198 GPQA questions**, so the older benchmark results stay attached to their original versions.
+
+**The ambition:** to reopen how LLM capabilities are engineered—**not only how many parameters they contain**.
 
 ---
 
