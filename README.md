@@ -2,9 +2,9 @@
 
 ### I build the architecture beneath AI — not just applications on top of it.
 
-**AI Agent Infrastructure · Cognitive Engineering · Non-Neural LLMs · Systems Architecture**
+**Cognitive Engineering · Non-Neural Execution Engines · AI Agent Infrastructure · AI-Native Compilation**
 
-> **日本語:** AIの出力を使うだけではなく、**知能の構成、判断、権限、実行、記憶、監査を成立させる仕組みそのもの**を研究・設計しています。主力プロジェクトは **D4 Pocket、BLUE-TANUKI、MINIDORA（ミニドラ）**。目標は、AIの能力と実世界での運用責任を、実装・検証できる工学構造に変えることです。
+> **日本語:** AIの出力だけでなく、**計算・判断・実行・権限・記憶・監査を成立させる構造そのもの**を研究・設計しています。主力は **D4 Pocket、BLUE-TANUKI、MINIDORA（ミニドラ）**。さらに **MINIDORA-BETA、AI-compiler、こんにゃく翻訳、MARS再現研究**へ展開しています。対象・責任・証拠・保証範囲を分け、仕様と実装を照合する工学を重視します。
 
 A language model is not automatically an agent. A fluent answer is not proof of correct judgment. And granting tools to an LLM does not, by itself, create a trustworthy authority system.
 
@@ -14,13 +14,13 @@ I lead the architecture, specifications, development direction and acceptance cr
 
 ---
 
-## Three Flagship Projects / 主力3製品
+## Three Flagship Projects / 主力3プロジェクト
 
 | Project | The proposition | Current evidence and boundary |
 |---|---|---|
-| **[🐚 D4 Pocket](https://github.com/gatchimuchio/D4-POCKET)** | **The operating foundation for AI agents.** A general-purpose control plane for runtimes, agents and tools, with explicit permission, approval, audit and recovery boundaries. | Windows feature-complete development milestone; bounded mobile/non-Windows acceptance; B4 integration remains open. **Not yet a production release.** |
-| **[🦝 BLUE-TANUKI](https://github.com/gatchimuchio/BLUE-TANUKI)** | **Give AI capabilities, not unchecked authority.** A resident agent system with standalone HDS-BRAIN governing decisions, execution boundaries and traceable results. | Public `1.0.0-rc.1` technical release candidate; newer end-to-end agent work in `QE_BUILD`. **GA and owner release approval remain pending.** |
-| **[⚙️ MINIDORA / ミニドラ](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA)** | **Rebuild LLMs from first principles, without a Transformer core.** A non-neural system that separates the language model, judgment, knowledge and extensible capabilities. | Historical same-run LIVE GPQA: **29/198 → 80/198 (+51, zero regressions)** without core retraining for this capability addition; independent core run **40/198**; bounded ADK/Cloud Run demo. Newer integrated code is not yet re-benchmarked. |
+| **[🐚 D4 Pocket](https://github.com/gatchimuchio/D4-POCKET)** | **The operating foundation for AI agents.** A general-purpose control plane for runtimes, agents and tools, with explicit permission, approval, audit and recovery boundaries. | Scoped Windows normal Release / Codex CLI acceptance (W01); end-to-end Agent → MCP → result-dependent task still open (W02). Linux and other target OS paths are incomplete. **16 of 18 release blockers unresolved; not released.** |
+| **[🦝 BLUE-TANUKI](https://github.com/gatchimuchio/BLUE-TANUKI)** | **Give AI capabilities, not unchecked authority.** A resident agent system with upstream governance, bounded execution, memory and auditable outcomes. | Public `1.0.0-rc.1` technical RC exists. Later `QE_BUILD` work adds bounded execution, recovery and browser/memory paths, but full system acceptance, five-OS release and owner GO remain open. |
+| **[⚙️ MINIDORA / ミニドラ](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA)** | **Reconstruct language-model functions without neural networks or a Transformer core.** Keep the language model, judgment, external knowledge and capabilities distinct. | Historical same-run LIVE GPQA **29/198 → 80/198 (+51, zero regressions)** with added modules; a separate core run **40/198**. The isolated [MINIDORA-BETA](https://github.com/gatchimuchio/MINIDORA-BETA) is a different engine baseline, **not** a fresh benchmark of these scores. |
 
 These are **three different engineering responsibilities**, not three names for the same chatbot.
 
@@ -34,7 +34,9 @@ D4 Pocket (formerly GUI Shell) is built around a simple proposition: **as AI age
 - **Authority-sensitive Rust Broker:** authenticated execution, approval eligibility, audit and recovery are kept separate from the Flutter presentation layer.
 - **Multi-agent operational surfaces:** comparison, handoff, task handling, runtime catalogs and a product-facing Agent Center.
 
-The [October 11, 2026 B4-L2 development record](https://github.com/gatchimuchio/D4-POCKET/blob/main/docs/REV5_PRODUCT_PROGRESS.md) reports **569 Rust tests passed, 167 schemas and 245 conformance checks**, alongside bounded live Codex CLI integration tests. Those figures describe a particular source revision and test environment—not a universal product guarantee. The complete Windows Desktop → Broker → real Codex → Agent Center product path was still open, with `release_ready=false`.
+The [October 11, 2026 B4-L2 development record](https://github.com/gatchimuchio/D4-POCKET/blob/main/docs/REV5_PRODUCT_PROGRESS.md) reports **569 Rust tests passed, 167 schemas and 245 conformance checks**, alongside bounded live Codex CLI integration tests. Those figures belong to that source revision and test environment, not to the current HEAD.
+
+The [November 10 integrated progress record](https://github.com/gatchimuchio/D4-POCKET/blob/main/docs/QE_2026-11-09/進捗.md) now distinguishes **W01 scoped Windows acceptance** from **W02 open end-to-end Codex → MCP Tool → dependent task execution**. Ubuntu package install/update/rollback/uninstall has bounded acceptance evidence, but Linux product acceptance and broader release gates remain open. The record reports **16 unresolved release blockers of 18** and `release_ready=false`.
 
 **The ambition:** an extensible “four-dimensional pocket” of agent capabilities, with the authority and responsibility to operate them coherently.
 
@@ -48,7 +50,7 @@ BLUE-TANUKI is not designed as another chat frontend that happens to call tools.
 - **LLMs, tools and communication channels** remain downstream capabilities, not independent sources of permission.
 - **Approval, audit, memory and recovery** are explicit parts of the execution model. Historical content and external metadata do not automatically escalate authority.
 
-A public [technical RC](https://github.com/gatchimuchio/BLUE-TANUKI/releases) provides a bounded implementation and portable installers. Subsequent development expands the plan → execution → result → memory → resumed-work chain. The current five-OS product vision is **a development target**, not a claim of five completed releases.
+A public [technical RC](https://github.com/gatchimuchio/BLUE-TANUKI/releases) provides a bounded implementation and portable installers. The [November `QE_BUILD` ledger](https://github.com/gatchimuchio/BLUE-TANUKI/blob/main/docs/開発進捗.md) records local wiring for browser observation, task-scoped recovery, source-bound memory and subsequent decisions. Many entries report build or fixture evidence while explicitly marking full tests, live provider paths, five-OS acceptance and product release **NOT_RUN or OPEN**. The five-OS vision is a target, not a claim of five completed releases.
 
 **The ambition:** move from “AI that can call things” to **AI whose decisions and actions can be governed and inspected**.
 
@@ -74,18 +76,32 @@ The October 1 integrated implementation and subsequent chat additions have **not
 
 ---
 
-## One Engineering Program — Different Layers
+## Current Expansion / 2026年11月の新展開
+
+These are **distinct projects with their own contracts and acceptance gates**. Their presence in the portfolio does not mean they are integrated or released.
+
+| Project | Engineering target | Verified public state / boundary |
+|---|---|---|
+| **[MINIDORA-BETA](https://github.com/gatchimuchio/MINIDORA-BETA)** | A general-purpose HDS-driven **input → core → output** execution engine, not a chatbot-only model. | Isolated `0.6.0b1` beta; **313 selected regression tests passed** on Linux/Python 3.12 (Nov 3). The R2 whole-system redesign is **design-only**; no new overall capability or GPQA claim. |
+| **[AI-compiler](https://github.com/gatchimuchio/AI-compiler)** | An AI-oriented textual operation format compiled into machine-level artifacts under explicit ISA/ABI/format contracts, without requiring an existing high-level language as an intermediate. | Initial AIC/0.2 path targets **Linux x86-64, System V ABI, ELF64 objects**. Rust compiler and C++ harness are wired; local QC is recorded, but broad standards conformance and beta release are **not complete**. |
+| **[Konjac Translation / こんにゃく翻訳](https://github.com/gatchimuchio/konjac-Translation)** | A multi-surface translation experience across text, speech, video, subtitles, documents and camera input, with MINIDORA-BETA as the intended engine boundary. | **Design and contracts only.** No runnable Konjac application or proven end-to-end translation pipeline yet. |
+| **[MARS reconstruction](https://github.com/gatchimuchio/MARS)** | Recover Japanese railway reservation-system engineering knowledge by preserving historical sources and testing the design decisions they support. | Source-grounded MARS-1/MARS-101 **bounded logical experiments**, not a reproduction of the original machines or an official JR/Hitachi project. |
+
+## Shared Engineering Method — Distinct Responsibilities
 
 ```text
-Cognitive Engineering / HDS
-     │   principles, distinctions, judgment boundaries
-     │
-     ├── MINIDORA      → language-model functions and computation
-     ├── BLUE-TANUKI   → judgment, authority, execution governance
-     └── D4 Pocket     → generic runtimes, tools and operator control
+Cognitive Engineering → shared inquiry and audit discipline
+
+MINIDORA (research) → MINIDORA-BETA (isolated execution engine)
+                        └── Konjac Translation (planned product consumer)
+BLUE-TANUKI          → governed agent execution
+D4 Pocket            → generic runtimes, tools and operator control
+
+AI-compiler          → independent AI-to-machine translation research
+MARS                 → independent historical engineering reconstruction
 ```
 
-**This is a map of design responsibilities and intended integration—not a claim that every cross-project production connection has already shipped.**
+**These lines distinguish roles and proposed relationships; they do not certify cross-project integration or production readiness.**
 
 The architecture is informed by the same method across domains:
 
@@ -103,13 +119,13 @@ The point is not to invent terminology for its own sake. It is to stop mistaking
 
 ## Research Foundations / 研究基盤
 
-**[Cognitive Engineering Foundations](https://github.com/gatchimuchio/cognitive-engineering-foundations)** is the public archive of my Japanese-first cognitive-engineering work, including language-base theory, the Trinity Principle, Closure Phase Ψ and the Domain of God Principle (神域原理). The project examines how objects, distinctions, relations and judgments are formed before they become engineering models.
+**[Cognitive Engineering Foundations](https://github.com/gatchimuchio/cognitive-engineering-foundations)** archives the Japanese canonical work behind my cognitive-engineering program, including language-base theory, the Trinity Principle, Closure Phase Ψ and **神の領域原理（仮）** (the provisional God's Domain Principle). Its current 14 canonical documents have separately classified English full translations and summary projections. The Japanese original remains authoritative; the project investigates how objects, relations and judgments are formed before they are promoted into engineering models.
 
 **[LLM-Constitutive-Specification](https://github.com/gatchimuchio/LLM-Constitutive-Specification)** separates the constitutive conditions of a language model from a particular model family, and distinguishes reproducing a local operation from reproducing a decision-making system. It is a specification with explicit applicability boundaries—not a statement that every model must use HDS.
 
-**[ARC-2-AGI-SOLVER](https://github.com/gatchimuchio/ARC-2-AGI-SOLVER)** explores general-purpose solving using a learning-machine structure, reusable memory and task-grounded evaluation. Its public repository documents the environment and ongoing work; this profile does not assert a competition score.
+**[HDS-BlackBox-Translator](https://github.com/gatchimuchio/HDS-BlackBox-Translator)** records an earlier bounded public explanation experiment. It is a **legacy public projection**, not a current HDS specification or a disclosure of private internals.
 
-The public repositories intentionally do **not** disclose complete private HDS internals or full mappings from private theoretical definitions to implementation. The publication boundary of each repository controls what is shared.
+The current theoretical publication boundary exposes **HDS by name only**. Historical public demos and product-level references must not be read as a current disclosure of HDS internals. Each repository sets its own public evidence and publication boundary.
 
 ## 🌸 Project ORCHID — Work Beyond AI
 
@@ -142,8 +158,10 @@ I am interested in systems whose operating principles can be explained, tested, 
 
 **Flagship projects:** [D4 Pocket](https://github.com/gatchimuchio/D4-POCKET) · [BLUE-TANUKI](https://github.com/gatchimuchio/BLUE-TANUKI) · [MINIDORA](https://github.com/gatchimuchio/NOTNN-LLM-MINIDORA)
 
-**Research:** [Cognitive Engineering](https://github.com/gatchimuchio/cognitive-engineering-foundations) · [LLM Constitutive Specification](https://github.com/gatchimuchio/LLM-Constitutive-Specification) · [Project ORCHID](https://github.com/DigitalServerHost/ORCHID)
+**New work:** [MINIDORA-BETA](https://github.com/gatchimuchio/MINIDORA-BETA) · [AI-compiler](https://github.com/gatchimuchio/AI-compiler) · [Konjac Translation](https://github.com/gatchimuchio/konjac-Translation) · [MARS](https://github.com/gatchimuchio/MARS)
+
+**Research and collaboration:** [Cognitive Engineering](https://github.com/gatchimuchio/cognitive-engineering-foundations) · [LLM Constitutive Specification](https://github.com/gatchimuchio/LLM-Constitutive-Specification) · [Legacy HDS demo](https://github.com/gatchimuchio/HDS-BlackBox-Translator) · [Project ORCHID](https://github.com/DigitalServerHost/ORCHID)
 
 **GitHub:** [@gatchimuchio](https://github.com/gatchimuchio)
 
-*Technical milestones above are dated observations, not blanket certification or commercial release claims.*
+*Portfolio status reviewed against public repository records on November 10, 2026 (JST). Each milestone describes its recorded revision and scope, not blanket certification or commercial release readiness.*
